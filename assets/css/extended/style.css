@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/font/Comfortaa_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "HarmonyOS_Regular";
+    src: url('/font/HarmonyOS_Sans_SC_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SourceCodePro_Regular";
+    src: url('/font/SourceCodePro_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body, article {
+    font-family: "Comfortaa", "HarmonyOS_Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+}
+
+code, pre {
+    font-family: "SourceCodePro_Regular", Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+}
+
+code.hljs.yaml {
+    user-select: none;
+}
+
+.breadcrumbs {background: var(--entry);padding:4px 15px; margin-bottom:var(--gap); list-style:none;border-radius: var(--radius) }
+.breadcrumbs>li{display:inline-block;opacity:.7;}
+.breadcrumbs>li+li:before {padding:0 5px; color: #ccc; content: ">"; }
+.breadcrumbs li a{text-decoration:none;}
+.dark-theme .breadcrumbs {background: #252627;}
+
+.banner {
+    position: relative;
+    display: flex;
+    min-height: 150px !important;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: none;
+}
+
+.main-title {
+    filter: drop-shadow(0px 0px 4px rgba(245, 188, 197, 0.8));
+    height: 50px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.logo a {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.article-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-meta { display: inline-block; }

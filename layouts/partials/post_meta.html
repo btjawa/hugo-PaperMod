@@ -1,23 +1,31 @@
 {{- $scratch := newScratch }}
 
 {{- if not .Date.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}
+  {{- $dateIcon := `<i class="fa-solid fa-calendar-days">&nbsp;</i>` }}
+  {{- $dateMeta := printf "%s<span title='%s'>%s</span>" $dateIcon (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)) }}
+  {{- $scratch.Add "meta" (slice $dateMeta) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
-{{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
+  {{- $timeIcon := `<i class="fa-solid fa-clock">&nbsp;</i>` }}
+  {{- $timeMeta := printf "%s%s" $timeIcon (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)) }}
+  {{- $scratch.Add "meta" (slice $timeMeta) }}
 {{- end }}
 
 {{- if (.Param "ShowWordCount") -}}
-{{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
+  {{- $wordCountIcon := `<i class="fa-solid fa-align-left">&nbsp;</i>` }}
+  {{- $wordCountMeta := printf "%s%s" $wordCountIcon (i18n "words" .WordCount | default (printf "%d words" .WordCount)) }}
+  {{- $scratch.Add "meta" (slice $wordCountMeta) }}
 {{- end }}
 
 {{- if not (.Param "hideAuthor") -}}
-{{- with (partial "author.html" .) }}
-{{- $scratch.Add "meta" (slice .) }}
-{{- end }}
+  {{- with (partial "author.html" .) }}
+    {{- $authorIcon := `<i class="fa-regular fa-at">&nbsp;</i>` }}
+    {{- $authorMeta := printf "%s%s" $authorIcon . }}
+    {{- $scratch.Add "meta" (slice $authorMeta) }}
+  {{- end }}
 {{- end }}
 
 {{- with ($scratch.Get "meta") }}
-{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+  {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
 {{- end -}}
