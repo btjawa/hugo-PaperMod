@@ -1,13 +1,6 @@
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: 'Comfortaa_Regular';
     src: url('/font/Comfortaa_Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "HarmonyOS_Regular";
-    src: url('/font/HarmonyOS_Sans_SC_Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -21,7 +14,7 @@
 }
 
 body, article {
-    font-family: "Comfortaa", "HarmonyOS_Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Comfortaa_Regular", "HarmonyOS_Sans_SC_Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
 }
 
 code, pre {
@@ -32,11 +25,11 @@ code.hljs.yaml {
     user-select: none;
 }
 
-.breadcrumbs {background: var(--entry);padding:4px 15px; margin-bottom:var(--gap); list-style:none;border-radius: var(--radius) }
+.breadcrumbs {background: var(--code-bg);padding:4px 15px; margin-bottom:var(--gap); list-style:none;border-radius: var(--radius) }
 .breadcrumbs>li{display:inline-block;opacity:.7;}
 .breadcrumbs>li+li:before {padding:0 5px; color: #ccc; content: ">"; }
 .breadcrumbs li a{text-decoration:none;}
-.dark-theme .breadcrumbs {background: #252627;}
+body.dark .breadcrumbs {background: var(--entry);}
 
 .banner {
     position: relative;
