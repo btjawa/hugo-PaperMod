@@ -14,7 +14,7 @@
 }
 
 body, article {
-    font-family: "Comfortaa_Regular", "HarmonyOS_Sans_SC_Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+    font-family: "Comfortaa_Regular", "HarmonyOS_Sans_SC_Regular", PingFang SC, Helvetica Neue, Microsoft YaHei, sans-serif;
 }
 
 code, pre {
